@@ -16,9 +16,9 @@ import org.springframework.data.relational.core.mapping.Table;
 public class User {
     @Id
     private Long id;
-    @NotBlank(message = "The First Name field should be blank.")
+    @NotBlank(message = "The First Name field should not be blank.")
     private String firstName;
-    @NotBlank(message = "The Last Name field should be blank.")
+    @NotBlank(message = "The Last Name field should not be blank.")
     private String lastName;
     private String email;
     private String country;
