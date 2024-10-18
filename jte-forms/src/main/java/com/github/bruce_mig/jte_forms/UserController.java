@@ -29,15 +29,4 @@ public class UserController {
         model.addAttribute("message","User information was saved successfully");
         return "index";
     }
-
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public String handleValidationExceptions(MethodArgumentNotValidException ex, Model model){
-        User user = (User) ex.getBindingResult().getTarget();
-        model.addAttribute("user", user);
-        model.addAttribute("error","Please fill out all of the required form fields.");
-        log.info("User validation failed for {}", user);
-        return "index";
-    }
-
-
 }
